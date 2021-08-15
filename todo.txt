@@ -1,0 +1,11 @@
+Before deploying
+
+- create git repo
+- remove tutorial files when poc is working
+- add authentication
+- add image to mylink?
+- write tests for logic (if any)
+
+After deployment:
+
+- configure db link
