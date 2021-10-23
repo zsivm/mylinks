@@ -12,9 +12,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // import routes
-const postsRoute = require('./routes/posts');
-app.use('/posts', postsRoute);
-
 const myLinkRoute = require('./routes/myLinks');
 app.use('/myLinks', myLinkRoute);
 

@@ -34,6 +34,7 @@ router.post('/', async (req, res) => {
     try {
         const savedMyLink = await myLink.save();
         res.json(savedMyLink);
+        console.log(`MyLink with title '${myLink.title}' added`)
     } catch(err) {
         res.json({ message: err });
     } 
@@ -48,10 +49,11 @@ router.patch('/:linkId', async (req, res) => {
                 title: req.body.title,
                 url: req.body.url,
                 description: req.body.description,
-                category: req.body.category
-                // date: Date.now() (will change date to last modified date)
+                category: req.body.category,
+                date: Date.now()
             }});
         res.json(updatedMyLink);
+        console.log(`MyLink with title '${updatedMyLink.title}' updated`);
     } catch(err) {
         res.json({ message: err });
     }
@@ -62,6 +64,7 @@ router.delete('/:linkId', async (req, res) => {
     try {
         const removedMyLink = await MyLink.deleteOne({ _id: req.params.linkId });
         res.json(removedMyLink);
+        console.log(`MyLink with title '${removedMyLink.title}' updated`);
     } catch(err) {
         res.json({ message: err });
     } 
